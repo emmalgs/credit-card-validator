@@ -25,3 +25,16 @@ function validate(credit) {
             return true;
         } else { return false; }
 }
+
+function identify(credit) {
+    let cardCompany = credit.toString().split("");
+    if (cardCompany[0] === "4") {
+    return "VISA";
+    } else if (cardCompany[0] === "5") {
+        return "MC";
+    } else if (cardCompany[0] === "6") {
+        return "DISC";
+    } else {
+        return "INVALID";
+    }
+}
