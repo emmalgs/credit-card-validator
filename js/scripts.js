@@ -1,7 +1,7 @@
 function validate(credit) {
     const creditArray = credit.toString().split("");
     const doubledCreditArray = []
-    if (creditArray.length === 16) {
+    if (creditArray.length <= 16 && creditArray.length > 14) {
         for (let i = 0; i < creditArray.length; i++) {
             if (i % 2 !== 0) {
                 let sumDouble = creditArray[i] * 2
@@ -34,7 +34,7 @@ function identify(credit) {
         return "your MC card is valid";
     } else if (cardCompany[0] === "6") {
         return "your DISC card is valid";
-    } else if (cardCompany[0] === "3" && (cardCompany[1] === "4" || cardCompany[1] === "7")) {
+    } else if (cardCompany[0] === "3" && (cardCompany[1] === "4" || cardCompany[1] === "7") && cardCompany.length === 15) {
         return "your AMEX card is valid";
-    }
+    } else { return 'your card is INVALID' }
 }
