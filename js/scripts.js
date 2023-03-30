@@ -22,19 +22,19 @@ function validate(credit) {
         })
         const sumArray = sum.toString().split("");
         if (parseInt(sumArray[sumArray.length - 1]) === 0) {
-            return true;
-        } else { return false; }
+            return identify(credit);
+        } else { return "your card is INVALID"; }
 }
 
 function identify(credit) {
     let cardCompany = credit.toString().split("");
     if (cardCompany[0] === "4") {
-    return "VISA";
+    return "your VISA card is valid";
     } else if (cardCompany[0] === "5") {
-        return "MC";
+        return "your MC card is valid";
     } else if (cardCompany[0] === "6") {
-        return "DISC";
-    } else {
-        return "INVALID";
+        return "your DISC card is valid";
+    } else if (cardCompany[0] === "3" && (cardCompany[1] === "4" || cardCompany[1] === "7")) {
+        return "your AMEX card is valid";
     }
 }

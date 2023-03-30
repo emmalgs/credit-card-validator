@@ -42,11 +42,11 @@ Expected Output: true;
 
 Test: "It should return VISA if a number starts with 4."
 Code: identify(4);
-Expected Output: "VISA"
+Expected Output: "your VISA card is valid"
 
 Test: "It should return VISA if a multiple-digit number starts with 4."
 Code: identify(40);
-Expected Output: "VISA"
+Expected Output: "your VISA card is valid"
 
 Test: "It should return false if a multiple-digit number doesn't start with 4."
 Code: identify(80);
@@ -54,14 +54,20 @@ Expected Output: "false"
 
 Test: "It should return "MC" if a multiple-digit number starts with 5."
 Code: identify(50);
-Expected Output: "MC"
+Expected Output: "your MC card is valid"
 
 Test: "It should return "DISC" if a multiple-digit number starts with 6."
 Code: identify(60);
-Expected Output: "DISC"
+Expected Output: "your DISC card is valid"
 
 Test: "It should return "INVALID" if a multiple-digit number doesn't start with 4, 5, or 6."
 Code: identify(70);
-Expected Output: "INVALID"
+Expected Output: "your card is INVALID"
 
-Test:
+Test: "It should return "AMEX" if a multiple-digit number starts with 3."
+Code: identify(30);
+Expected Output: "your AMEX card is valid"
+
+Test: "It should return "AMEX" if a multiple-digit number starts with 34 or 37."
+Code: identify(34); || identify(37);
+Expected Output: "your AMEX card is valid"
