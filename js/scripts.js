@@ -4,7 +4,15 @@ function validate(credit) {
         const doubledCreditArray = []
         for (let i = 0; i < creditArray.length; i++) {
             if (i % 2 !== 0) {
-                doubledCreditArray.push(creditArray[i] * 2)
+                let sumDouble = creditArray[i] * 2
+                if (sumDouble > 9) {
+                    const summedDouble = sumDouble.toString().split("");
+                    let sum = 0;
+                    summedDouble.forEach(function(number) {
+                        sum += parseInt(number)
+                    })
+                    doubledCreditArray.push(sum)
+                } else { doubledCreditArray.push(sumDouble) }
             } else { doubledCreditArray.push(parseInt(creditArray[i]))}
         }
         return doubledCreditArray

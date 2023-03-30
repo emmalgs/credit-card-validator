@@ -29,3 +29,7 @@ Expected Output: [1,4,3,8,1,4,3,8,1,4,3,8,1,4,3,8];
 Test: "It should sum a doubled digit if it is a double digit and return updated array"
 Code: validate(1238123812381238);
 Expected Output: [1,4,3,7,1,4,3,7,1,4,3,7,1,4,3,7];
+
+Test: "It should return true if a 16 digit number, after doubling every other digit AND doubled the double digits, whose sum is equal to a number that ends in 0"
+Code: validate(4102080860435620);
+Expected Output: true;
